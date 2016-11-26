@@ -394,12 +394,6 @@ public class Reversi extends JFrame {
 
         System.out.println("Going to play a " + minutos + "-minute game");
 
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            System.out.println(e);
-        }
-
         int round = 0;
         int turn = 0;
         int mueva[] = new int[2];
@@ -416,21 +410,11 @@ public class Reversi extends JFrame {
             
             if (turn == 0) {
                 mueva = p1.takeTurn(round, state, t1, t2, prnt);
-                try {
-                    Thread.sleep(10);
-                } catch (InterruptedException e) {
-                    System.out.println(e);
-                }
                 
                 eTime = System.nanoTime() - sTime;
                 t1 -= (eTime / 1000000000.0);
                 
                 if (t1 <= 0.0) {
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException e) {
-                        System.out.println(e);
-                    }
  
                     p1.gameOver(state);
                     p2.gameOver(state);
@@ -451,11 +435,6 @@ public class Reversi extends JFrame {
                 t2 -= (eTime / 1000000000.0);
                 
                 if (t2 <= 0.0) {
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException e) {
-                        System.out.println(e);
-                    }
  
                     p1.gameOver(state);
                     p2.gameOver(state);
@@ -485,12 +464,6 @@ public class Reversi extends JFrame {
                 p1.update(round, state, t1, t2);
                 p2.update(round, state, t1, t2);
 
-                try {
-                    Thread.sleep(50);
-                } catch (InterruptedException e) {
-                    System.out.println(e);
-                }
-
                 nocount = 0;
             }
             else {
@@ -499,11 +472,6 @@ public class Reversi extends JFrame {
             }
             
             if (nocount == 2) {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    System.out.println(e);
-                }
  
                 p1.gameOver(state);
                 p2.gameOver(state);
