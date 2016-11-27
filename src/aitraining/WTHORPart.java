@@ -56,7 +56,7 @@ public class WTHORPart {
 		return movesList.length == SHOTS_LIST_SIZE_8 ? WTHORReader.BOARD_SIZE_8 : SHOTS_LIST_SIZE_10;
 	}
 
-	public static byte convertMoveTo8Board(int move) {
+	public static byte convertMoveToIndex8(int move) {
 
 		byte col = (byte) (move % WTHORReader.BOARD_SIZE_10 - 1);
 		byte row = (byte) (move / WTHORReader.BOARD_SIZE_10 - 1);
